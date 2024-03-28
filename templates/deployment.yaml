@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mars
-  namespace: {{ .Values.mars.namespace }}
+  namespace: {{ .Values.namespace }}
 spec:
   revisionHistoryLimit: 0
   selector:
@@ -44,7 +44,7 @@ spec:
               memory: 200Mi
           env:
             - name: SHOW
-              value: {{ .Values.mars.show }}
+              value: {{ .Values.show }}
           ports:
             - containerPort: 8000
               name: endpoint
